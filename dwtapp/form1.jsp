@@ -10,20 +10,20 @@
 
      <body bgcolor="#FFEAF4">
         <center>
-        <p align="left"><a href="index.jsp"><b>[HOME]</b></a><hr> 
         <form  id="frmDemo" >
-           <table border="1" cellpadding="0" cellspacing ="0" height="30%" width="50%">
+           <table border="1" cellpadding="0" cellspacing ="0" height="30%" width="55%">
                <tr bgcolor="#FBFBFB">
-                   <td align="right">Full name:</td><td colspan="2">
-                 <input type="text"  name="name" value="" size="20" /><td>
+                   <td width="25%" align="right">Full name:</td>
+                   <td colspan="2">
+                     <input type="text"  name="name" value="" size="35" />
+                 <td width="4%">
              </tr>
                 <tr bgcolor="#FBFBFB">
-                   <td align="right">Email: </td><td colspan="2">
-                     <input type="text"  name="mail" value="" size="20" /></td>
+                   <td align="right">Email: </td><td colspan="2"><input type="text"  name="mail" value="" size="35" /></td>
                 </tr>
                 <tr bgcolor="#FBFBFB">
-                   <td>&nbsp;</td><td><input type="button" value="NEXT"  onclick="javascript:DemoReg('Register,form2.jsp')"/></td>
-                   <td><input type="reset" value="Reset" /></td>
+                   <td>&nbsp;</td><td width="20%"><input type="button" value="NEXT"  onclick="javascript:DemoReg('Register,form2.jsp')"/></td>
+                   <td width="51%"><input type="reset" value="Reset" /></td>
                 </tr>
            </table>
         </form>

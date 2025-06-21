@@ -2,7 +2,7 @@
 <body bgcolor="#FFFFFF">
 <hr>
 <%
-
+		out.println("<u>Summary of the information <br></u>");
         out.println("Name : " + (String)session.getAttribute("theName") + "<br/>");
         out.println("Email ID: " + (String)session.getAttribute("theemail") + "<br/>");
         out.println("Address1: " + (String)session.getAttribute("address1") + "<br/>");

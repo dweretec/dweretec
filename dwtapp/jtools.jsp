@@ -9,7 +9,7 @@
 </head>
 <body>
 <%
-String sshHost = "172.16.10.15";
+String sshHost = "192.168.1.11";
 int sshPort = 22;
 String sshUserName = "lagony";
 String sshPassword = "dwere4u";

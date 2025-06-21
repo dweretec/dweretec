@@ -15,7 +15,7 @@
 
   var="dwtdbresource"
   driver="com.mysql.jdbc.Driver"
-  url="jdbc:mysql://172.16.10.12:3306/javatest"
+  url="jdbc:mysql://localhost:3306/javatest"
   user="javauser"
   password="javadude"
 />

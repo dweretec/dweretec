@@ -24,6 +24,5 @@ Statement stmt=conn.createStatement();
 String sql = "select from users where username='" username "'";
 sql =" and password='"+password "'";
 ResultSet rs=stmt.executeQuery(sql);
-%>
 </body>
 </html>

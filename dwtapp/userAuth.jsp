@@ -2,10 +2,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.io.*,java.util.*, java.util.Calendar" %>
 <html>
-<head>
   <title>My Page <%=request.getParameter( "ssID" )%> </title>
+<head>
+
 </head>
-<body bgcolor="#FFFFFF">
+<body bgcolor="#FFFFFF" onload="javascript:restorePrf('logout')">
 <%
    String name = request.getParameter( "username" );
    String pass = request.getParameter( "passwd" );
@@ -30,29 +31,31 @@
       session.setAttribute(visitCountKey,  visitCount);
    } 
 %>
-<h1>Welcome <%=name%>! Session: <%=ssID%></h1>
 
 <sql:setDataSource
   var="dwtdbresource"
   driver="oracle.jdbc.driver.OracleDriver"
-  url="jdbc:oracle:thin:@192.168.174.4:1521:dwtdb"
+  url="jdbc:oracle:thin:@192.168.1.11:1521:amrdb1"
   user="www"
   password="dwere4u"
 />
 
-<hr>
+
 
 <sql:transaction dataSource="${dwtdbresource}">
   
   <sql:query var="getUser">
-    SELECT id,username,fullname,email,age,passwd FROM register where username like '${param.username}' and passwd like '${param.passwd}' 
+    SELECT regid,username,name,email,age,passwd FROM register where username like '${param.username}' and passwd like '${param.passwd}'
   </sql:query>
 
 </sql:transaction>
-
+<c:forEach var="row" items="${getUser.rows}" varStatus="status">
+<h1>Welcome <c:out value="${row.name}"/>! </h1>
+ </c:forEach>
+<hr>
 <%-- Yet another dwtdbresource showing how to populate a table --%>
-<table border="1">
-<tr>
+<table border="1" class="circular">
+<tr class="circular">
 <td  colspan="5" > <%
 out.println("<br>Id:"+ session.getId());
 out.println("<br>User Id:"+userID); 
@@ -60,29 +63,33 @@ out.println("<br>Time Created: "+ createTime);
 out.println("<br>Last Access:"+lastAccessTime);
 
 %>
+Web hosting
+Systems development and support
+Application support
+iBusiness development
+We are here to server you
         </td>
 </tr>
-<tr>
+<tr class="circular">
    <th>Emp ID</th>
    <th>Full Name</th>
    <th>Email</th>
    <th>Age</th>
-   <th><a href="#" onClick="javascript:alert('Show Seesion Details \r' + '<%=session.getId()%>' + '<%=userID%>')">Show session details</a></th>
+   <th>&nbsp;</th>
 </tr>
   <c:forEach var="row" items="${getUser.rows}" varStatus="status">
     <%-- Get the column names for the header of the table --%>
  <tr>
-   <td><c:out value="${row.id}"/></td>
-   <td><c:out value="${row.fullname}"/>
-   </td>
+   <td><a href="#" onClick="javascript:loadProfile('${row.regid},updateprof.jsp')" title ="Update Record" >
+   <c:out value="${row.regid}"/> </a></td>
+   <td><c:out value="${row.name}"/></td>
    <td><c:out value="${row.email}"/></td>
    <td><c:out value="${row.age}"/></td>
    <td>*</td>
 </tr>
-
   </c:forEach>
  
 </table>
- 
+ <jsp:include page="profile/index.jsp" />
 </body>
 </html>

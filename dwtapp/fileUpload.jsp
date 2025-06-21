@@ -50,7 +50,7 @@ contents.append(line);
 value = contents.toString();
 System.out.println("Value:"+value);
 Class.forName("com.mysql.jdbc.Driver");
-con=DriverManager.getConnection("jdbc:mysql://172.16.10.12/webapps?user=root&password=dwere4u"); 
+con=DriverManager.getConnection("jdbc:mysql://localhost/webapps?user=root&password=dwere4u"); 
 pst=con.createStatement();
 int val = pst.executeUpdate("insert into file(file_data) values('"+value+"')");
 }

@@ -12,7 +12,7 @@
 <sql:setDataSource
   var="dwtdbresource"
   driver="oracle.jdbc.driver.OracleDriver"
-  url="jdbc:oracle:thin:@192.168.174.4:1521:dwtdb"
+  url="jdbc:oracle:thin:@192.168.1.11:1521:amrdb1"
   user="www"
   password="dwere4u"
 />
@@ -21,23 +21,18 @@
 <hr>
 
 <sql:transaction dataSource="${dwtdbresource}">
-
-<sql:update var="oraform">
-    insert into register(username,passwd,cpasswd) values('${param.name}','${param.pw}','${param.cpw}')
-</sql:update>
-
   <sql:query var="dwtflds">
-    SELECT * FROM register where username like '${param.name}'
+    SELECT * FROM register where username like '${param.email}'
   </sql:query>
-
 </sql:transaction>
 
-
-
-<sql:query var="dwtflds" dataSource="${dwtdbresource}">
-  SELECT * FROM register  where username like '${param.name}'
+<sql:query var="maxid" dataSource="${dwtdbresource}">
+  SELECT max(regid) FROM register
 </sql:query>
 
+<sql:update var="oraform" dataSource="${dwtdbresource}">
+    insert into register(username,name,email,age,passwd,cpasswd) values('${param.email}','${param.name}','${param.email}','${param.age}','${param.pw}','${param.cpw}')
+</sql:update>
 
 <%-- Yet another dwtdbresouce showing how to populate a table --%>
 <table border="1">
@@ -66,8 +61,9 @@
 
 
 <br>
-<a href="/">Return Main</a>
+<a href="/dwtapps/">Return Main</a>
 <br>
+
 </body>
 </html>
 

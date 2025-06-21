@@ -5,7 +5,7 @@
   </head>
   <body>
 <sql:setDataSource scope="session" var="dataSource"
-    url="jdbc:mysql://172.16.10.12/javatest" driver="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://localhost/javatest" driver="com.mysql.jdbc.Driver"
     user="javauser" password="javadude"/>
 
 <!-- The following UPDATE works fine.. -->

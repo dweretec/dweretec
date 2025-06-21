@@ -24,7 +24,7 @@
 <tr height="10">
 <td width="66%" rowspan="2" valign="top">
   
-    <%@include file="iday.jsp" %>
+    <i!-- %@ include file="iday.jsp" % /-->
   
   <div id="ShowDealsToday" style="background-color:FC0; margin:auto; color:F00">
   Daily Deals!</div>

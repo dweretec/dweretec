@@ -5,12 +5,12 @@
 <sql:setDataSource
 var = "db"
 driver = "oracle.jdbc.driver.OracleDriver"
-url = "jdbc:oracle:thin:@oracle.<uni-name>:1522:ugdb11"
+url = "jdbc:oracle:thin:@192.168.1.11:1522:amrdb"
 user = "www"
 password = "dwere4u"/>
 
 <sql:query var="allBooks" dataSource="${db}">
-select * from books
+select * from register
 </sql:query> 
 </body>
 </html>

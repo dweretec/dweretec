@@ -29,7 +29,7 @@ body {
 <li><a href="eservlet.html" onMouseOver="javascript:loadContent('Java Servlet Ajax Test, loadJSP.jsp')">Java Servlet Ajax Test</a>.
 <li><a href="mysqlform.jsp"  onMouseOver="javascript:loadContent('Connectivity, loadJSP.jsp')">Connectivity form Reg (Mysql)</a>.
 <li><a href="oraform.jsp" onMouseOver="javascript:loadContent(' form Reg (Oracle), loadJSP.jsp')">Connectivity form Reg (Oracle)</a>.
-<li><a href="https://192.168.174.4:1158/em" target="blank">Oracle Enterprise Manager</a>.
+<li><a href="https://192.168.1.11:1158/em" target="blank">Oracle Enterprise Manager</a>.
 <li><a href="dwtfile.jsp" onMouseOver="javascript:loadContent('parameterValue','loadJSP.jsp')">File Upload</a>.
 <li><a href="jtools.jsp" onMouseOver="javascript:loadContent('parameterValue','loadJSP.jsp')">Java System Tool</a>.
 <li><a href="#" onMouseOver="javascript:loadContent('parameterValue','upload.jsp')">Upload file DB</a>

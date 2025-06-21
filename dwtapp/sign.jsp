@@ -103,7 +103,7 @@ frmRegister.submit()
 
  
 
-<p align="left"><a href="index.jsp"><b>[HOME]</b></a><hr> 
+<p align="left"><b> Register <hr> </p>
 <p align="center"><b>Please complete the following registration form</b> <hr><br><br>
 
  
