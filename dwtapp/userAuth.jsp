@@ -35,7 +35,7 @@
 <sql:setDataSource
   var="dwtdbresource"
   driver="oracle.jdbc.driver.OracleDriver"
-  url="jdbc:oracle:thin:@192.168.1.11:1521:amrdb1"
+  url="jdbc:oracle:thin:@localhost:1521:dwtdb19c"
   user="www"
   password="dwere4u"
 />
