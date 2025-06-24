@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>PHP Test</title>
+<title>Test PHP Dev Environment</title>
 </head>
 <body>
 <?php phpinfo(); ?>
